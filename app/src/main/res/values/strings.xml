@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QClicker</string>
+    <string name="Resettext">Reset</string>
+    <string name="CowText">Fass mich an!</string>
+    <string name="CowDescription">A pic of a cow</string>
+    <string name="perv">PERVERSER!!!</string>
 </resources>

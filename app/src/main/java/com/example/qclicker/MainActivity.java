@@ -1,10 +1,11 @@
 package com.example.qclicker;
 
+import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     private int counter = 0;
@@ -22,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
                 tapCow();
             }
         });
+        Button resButton = findViewById(R.id.Resetbutton);
+        resButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                counter = 0;
+                message.setText("Fass mich nochmal an!!!!");
+                findViewById(R.id.per).setVisibility(View.INVISIBLE);
+            }
+        });
     }
 
     private void tapCow() {
@@ -37,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
             default:
                 countAsText = String.format("%d mal", counter);
         }
+        if (counter >= 100) {
+            findViewById(R.id.per).setVisibility(View.VISIBLE);
+        }
         message.setText(String.format("Du hast die Kuh %s angefasst", countAsText));
     }
+
 }
